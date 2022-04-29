@@ -49,8 +49,8 @@ class IMUHandler_ROS : public IMUHandler<EKFState_T> {
 
     // Get the imu values.
     msf_core::Vector3 linacc;
-    linacc << msg->linear_acceleration.x, msg->linear_acceleration.y, msg
-        ->linear_acceleration.z;
+    linacc << -(msg->linear_acceleration.x), -(msg->linear_acceleration.y), -(msg
+        ->linear_acceleration.z);
 
     msf_core::Vector3 angvel;
     angvel << msg->angular_velocity.x, msg->angular_velocity.y, msg
